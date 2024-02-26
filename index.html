@@ -1,15 +1,49 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE-=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Iglesia Jesús El Redentor</title>
-  <link rel="icon" href="jer.jpg">
-  <link rel="stylesheet" href="styles.css">
+    <title>Nombre del Amor de tu Vida</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input[type="text"] {
+            padding: 5px;
+            width: 200px;
+            margin-right: 10px;
+        }
+        button {
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
-<body ondragstart='return false' oncopy="return false" oncontextmenu="return false" onkeydown="return false">
-  
-  <script src="main.js"></script>
+<body>
+    <h2>Crea el nombre del amor de tu vida:</h2>
+    <form id="nameForm">
+        <input type="text" id="firstName" placeholder="Mi nombre" required>
+        <input type="text" id="lastName" placeholder="Mi apellido" required>
+        <button type="submit">Ver</button>
+    </form>
+    <h2>El amor de tu vida es:</h2>
+    <p id="fullName"></p>
+
+    <script>
+        const nameForm = document.getElementById('nameForm');
+        const fullName = document.getElementById('fullName');
+
+        nameForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            fullName.innerText = firstName + ' ' + lastName;
+        });
+    </script>
 </body>
 </html>
