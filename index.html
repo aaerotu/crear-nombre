@@ -2,15 +2,26 @@
 <html>
 <head>
     <title>Nombre del Amor de tu Vida</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f9fa;
+        }
+        #container {
+            max-width: 90%;
+            text-align: center;
         }
         input[type="text"] {
             padding: 5px;
-            width: 200px;
-            margin-right: 10px;
+            width: 100%;
+            margin-bottom: 10px;
         }
         button {
             padding: 5px 10px;
@@ -25,14 +36,16 @@
     </style>
 </head>
 <body>
-    <h2>Crea el nombre del amor de tu vida:</h2>
-    <form id="nameForm">
-        <input type="text" id="firstName" placeholder="Mi nombre" required>
-        <input type="text" id="lastName" placeholder="Mi apellido" required>
-        <button type="submit">Ver</button>
-    </form>
-    <h2>El amor de tu vida es:</h2>
-    <p id="fullName"></p>
+    <div id="container">
+        <h2>Crea el nombre del amor de tu vida:</h2>
+        <form id="nameForm">
+            <input type="text" id="firstName" placeholder="Mi nombre" required>
+            <input type="text" id="lastName" placeholder="Mi apellido" required>
+            <button type="submit">Ver</button>
+        </form>
+        <h2>El amor de tu vida es:</h2>
+        <p id="fullName"></p>
+    </div>
 
     <script>
         const nameForm = document.getElementById('nameForm');
